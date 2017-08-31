@@ -10,6 +10,14 @@ public class AfternoonExercises {
 	 firstLast6([13, 6, 1, 2, 3]) → false
 	 */
 	public boolean firstLast6(int[] nums) {
+		for(int i = 0; i < nums.length; i++) {
+			if ((nums[0] == 6) || nums[nums.length - 1] == 6)
+				return true;
+			
+			
+		};
+		
+	
 		return false;
 	}
 
@@ -21,6 +29,10 @@ public class AfternoonExercises {
 	 sameFirstLast([1, 2, 1]) → true
 	 */
 	public boolean sameFirstLast(int[] nums) {
+		for(int i = 0; i < nums.length; i++) {
+			if (nums.length >= 1 && nums[0] == nums[nums.length - 1] )
+				return true;
+		}
 		return false;
 	}
 
@@ -29,7 +41,8 @@ public class AfternoonExercises {
 	 makePi() → [3, 1, 4]
 	 */
 	public int[] makePi() {
-		return new int[] {};
+		
+		return new int[] {3, 1, 4};
 	}
 
 	/*
@@ -40,6 +53,13 @@ public class AfternoonExercises {
 	 commonEnd([1, 2, 3], [1, 3]) → true
 	 */
 	public boolean commonEnd(int[] a, int[] b) {
+		
+		if ((a[0] == b[0]) || (a[a.length - 1] == b[b.length -1]))	
+			return true;
+		
+			
+			
+		
 		return false;
 	}
 
@@ -50,7 +70,12 @@ public class AfternoonExercises {
 	 sum3([7, 0, 0]) → 7
 	 */
 	public int sum3(int[] nums) {
-		return 0;
+		int sum = 0;
+		for (int i = 0; i < nums.length; i++){
+			sum = sum + nums[i];
+			
+		}
+		return sum;
 	}
 
 	/*
@@ -60,9 +85,21 @@ public class AfternoonExercises {
 	 rotateLeft3([5, 11, 9]) → [11, 9, 5]
 	 rotateLeft3([7, 0, 0]) → [0, 0, 7]
 	 */
-	public int[] rotateLeft3(int[] nums) {
-		return new int[] {};
-	}
+	public int[] rotateLeft3(int[]  nums){ 
+		
+		int[] numsCopy = new int [3];
+		
+		{
+			numsCopy[0] = nums[1];
+			
+		 numsCopy[1] = nums[2];
+			
+			numsCopy[2] = nums[0];
+			}
+		
+		return  numsCopy;
+		
+		}
 
 	/*
 	 Given an array of ints length 3, return a new array with the elements in reverse order, so 
@@ -72,7 +109,17 @@ public class AfternoonExercises {
 	 reverse3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] reverse3(int[] nums) {
-		return new int[] {};
+	int[] numsCopy = new int [3];
+		
+		{
+			numsCopy[0] = nums[2];
+			
+		numsCopy[1] = nums[1];
+			
+			numsCopy[2] = nums[0];
+			}
+		
+		return  numsCopy;
 	}
 
 	/*
@@ -83,9 +130,22 @@ public class AfternoonExercises {
 	 maxEnd3([2, 11, 3]) → [3, 3, 3]
 	 */
 	public int[] maxEnd3(int[] nums) {
-		return new int[] {};
+		
+  if (nums[0] > nums[2]){
+	 nums[1] = nums[0];
+	 nums[2] = nums[0];
+	return nums;
 	}
-
+	  
+	  else if (nums[2] >= nums[0])
+		  nums[0] = nums[2];
+		  nums[1] = nums[2];
+	  
+		  return nums;
+	  
+	  
+	
+	}
 	/*
 	 Given an array of ints, return the sum of the first 2 elements in the array. If the array length
 	  is less than 2, just sum up the elements that exist, returning 0 if the array is length 0.
@@ -94,7 +154,18 @@ public class AfternoonExercises {
 	 sum2([1, 1, 1, 1]) → 2
 	 */
 	public int sum2(int[] nums) {
-		return 0;
+		int sum = 0;
+		for (int i = 0; i < nums.length; i++){
+			if (nums.length >= 2)
+			sum = sum + nums[1] + nums[0];
+			return sum;
+		} if (nums.length == 1){
+			sum = nums[0];
+		
+		return sum;
+		} if (nums.length == 0){
+				return 0;
+		} else return 0;
 	}
 
 	/*
@@ -105,7 +176,11 @@ public class AfternoonExercises {
 	 middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
 	 */
 	public int[] middleWay(int[] a, int[] b) {
-		return new int[] {};
+		int[] middle = new int[2];
+		middle[0] = a[1];
+		middle[1] = b[1];
+		
+		return middle;
 	}
 
 	/*
@@ -116,7 +191,13 @@ public class AfternoonExercises {
 	 countEvens([1, 3, 5]) → 0
 	 */
 	public int countEvens(int[] nums) {
-		return 0;
+		int counter = 0;
+		for(int i = 0; i < nums.length; i++){
+			if ((nums[i] % 2) == 0)
+			counter++;		
+		} return counter;
+
+		
 	}
 
 	/*
@@ -128,7 +209,24 @@ public class AfternoonExercises {
 	 sum13([1, 2, 2, 1, 13]) → 6
 	 */
 	public int sum13(int[] nums) {
-		return 0;
+		int sum = 0;
+		for (int i = 0; i < nums.length; i++){
+				
+			if (nums.length == 0){
+			return sum;			
+			}else if ((nums.length > 0) && (nums[i] != 13) ){
+			
+		 
+			sum = sum + nums[i];
+		
+			} else if ((nums.length > 0) && (nums[i] == 13) && (nums[i - 1] == 13)){
+			sum = sum + 0;
+			
+			}return sum;
+		
+		
+		
+		 
 	}
 
 	/*
@@ -138,6 +236,12 @@ public class AfternoonExercises {
 	 has22([2, 1, 2]) → false
 	 */
 	public boolean has22(int[] nums) {
+		for (int i = 0; i < nums.length; i++){
+			if ((nums[i] = 2) &&  (nums[i + 1] == 2)){				
+			
+			return true;
+		}
+	
 		return false;
 	}
 	
@@ -148,7 +252,15 @@ public class AfternoonExercises {
 	 lucky13([1, 2, 4]) → false
 	 */
 	public boolean lucky13(int[] nums) {
-		return false;
+		
+		for (int i = 0; i < nums.length; i++){
+			if (nums[i] == 1)
+			return false;
+			else if (nums[i] == 3)
+				return false;
+		
+		
+			else return true;}
 	}
 
 	/*
@@ -158,7 +270,21 @@ public class AfternoonExercises {
 	 sum28([1, 2, 3, 4]) → false
 	 */
 	public boolean sum28(int[] nums) {
+		
+		int sum = 0;
+		
+		
+		for (int i = 0; i < nums.length; i++){
+			if (nums[i] == 2)
+			sum = sum + 2;
+			else if (nums[i] != 2)
+				sum = sum + 0;
+		}if (sum == 8)
+			return true;
+		
+		else
 		return false;
+		
 	}
 
 }
