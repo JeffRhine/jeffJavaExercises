@@ -208,26 +208,31 @@ public class AfternoonExercises {
 	 sum13([1, 1]) → 2
 	 sum13([1, 2, 2, 1, 13]) → 6
 	 */
-	public int sum13(int[] nums) {
-		int sum = 0;
-		for (int i = 0; i < nums.length; i++){
-				
+		public int sum13(int[] nums) {
+			int sum = 0;
+			
 			if (nums.length == 0){
-			return sum;			
-			}else if ((nums.length > 0) && (nums[i] != 13) ){
+				return 0;			
+				}
+			for (int i = 0; i < nums.length; i++){
+					
+				
+				 if (nums[i] == 13){
+					 i++;
+				 } else 
+				 sum = sum + nums[i];
 			
+				
+				
+			}
+				return sum;
+				}
+				
+		
+		
+		
 		 
-			sum = sum + nums[i];
-		
-			} else if ((nums.length > 0) && (nums[i] == 13) && (nums[i - 1] == 13)){
-			sum = sum + 0;
-			
-			}return sum;
-		
-		
-		
-		 
-	}
+	
 
 	/*
 	 Given an array of ints, return true if the array contains a 2 next to a 2 somewhere.
@@ -235,33 +240,30 @@ public class AfternoonExercises {
 	 has22([1, 2, 1, 2]) → false
 	 has22([2, 1, 2]) → false
 	 */
-	public boolean has22(int[] nums) {
-		for (int i = 0; i < nums.length; i++){
-			if ((nums[i] = 2) &&  (nums[i + 1] == 2)){				
-			
-			return true;
+		public boolean has22(int[] nums) {
+			for (int i = 0; i < nums.length - 1; i++){
+				if ((nums[i] == 2) &&  (nums[i + 1] == 2)){	
+					return true;
+				}			
+			}		
+			return false;
 		}
-	
-		return false;
-	}
-	
+		
 	/*
 	 Given an array of ints, return true if the array contains no 1's and no 3's.
 	 lucky13([0, 2, 4]) → true
 	 lucky13([1, 2, 3]) → false
 	 lucky13([1, 2, 4]) → false
 	 */
-	public boolean lucky13(int[] nums) {
-		
-		for (int i = 0; i < nums.length; i++){
-			if (nums[i] == 1)
-			return false;
-			else if (nums[i] == 3)
+		public boolean lucky13(int[] nums) {
+			
+			for (int i = 0; i < nums.length; i++){
+				if ((nums[i] == 1) || (nums[i] == 3)){
 				return false;
-		
-		
-			else return true;}
-	}
+				}			
+			
+				}return true;
+		}
 
 	/*
 	 Given an array of ints, return true if the sum of all the 2's in the array is exactly 8.
