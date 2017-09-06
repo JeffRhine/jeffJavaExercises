@@ -201,14 +201,20 @@ public class Exercises {
 	 withouEnd2("ab") → ""
 	 */
 	public String withouEnd2(String str) {
-		if(str.length()>2){
-			String one=str.substring (1) ;
-			String two=one.substring(one.length(),one.length()-1);			
-			return two;
-		}if (str.length() ==2){
-			return null;
+		String empty="";
+		if (str.length()<2){
+			return empty;
 		}
-		return null;
+		str=str.replace(str.substring(0, 1), "");
+		str=str.replace(str.substring(str.length()-1, str.length()), "");
+//		if(str.length()>2){
+//			String one=str.substring (0,1) ;
+//			String two=str.substring(str.length()-1,str.length());			
+//			return str;
+//		}if (str.length() <=2){
+//			return null;
+//		}
+		return str;
 	}
 
 	/*
@@ -233,7 +239,7 @@ public class Exercises {
 		if (str.length()<2){
 			return false;
 		}
-		String ends = str.substring(str.length(), str.length()-2);
+		String ends = str.substring(str.length()-2, str.length());
 		if (ends.equals("ly")){
 		return true;
 		}
@@ -296,7 +302,7 @@ public class Exercises {
 	public boolean hasBad(String str) {
 		String one = str.substring(0, 3);
 		String two = str.substring(1, 4);
-		if (str.length()==3 && one.equals("bad")){		
+		if ((str.length()<4) && (str.equalsIgnoreCase("bad"))){		
 			return true;
 		}else if(str.length()>=4 && one.equals("bad") || two.equals("bad")) {
 			return true;
@@ -365,11 +371,19 @@ public class Exercises {
 	 doubleX("xxxxx") → true
 	 */
 	public boolean doubleX(String str) {
-
+int countx = 0;
+int countxx=0;
 		for( int i = 0; i < str.length() -1; i++){
 			if(str.substring(i, i+1).equalsIgnoreCase("x")){
-				while(str.substring(i+1, i+2).equalsIgnoreCase("x"));
+				countx++;
+			}
+				if(str.substring(i, i+2).equalsIgnoreCase("xx")){
+					countxx++;
+				}if (countx!=countxx){
+					return false;
+				}if (countxx==1){
 				return true;
+				
 //	if (str.substring(i, i+2).equalsIgnoreCase("xx")){
 //		return true;
 	}	
@@ -432,9 +446,10 @@ public class Exercises {
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
-		int count=0;
-		for( int i = 0; i < str.length() ; i++){
-	if (str.substring(i, i+2).equalsIgnoreCase(str.substring(str.length() -2, str.length()))){
+		int count= 0;
+		String end=str.substring(str.length()-2,str.length());
+		for( int i = 0; i < str.length(); i++){
+	if (str.substring(i, i+2).equalsIgnoreCase(end)){
 				count= count++;
 	}	
 							
@@ -492,8 +507,9 @@ public class Exercises {
 	 */
 	public String altPairs(String str) {
 		String result="";
-		
+	
 		for(int i=0;i<str.length();i++){
+			if(str.length()%2==0);
 	    result=str.substring(0, 2)+result;
 	str=str.substring(4, str.length());
 		}
