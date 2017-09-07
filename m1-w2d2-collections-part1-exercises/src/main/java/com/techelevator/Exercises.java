@@ -1,6 +1,8 @@
 package com.techelevator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -22,8 +24,19 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"] 
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
-	}
+//		String[] str = new String[stringArray.size()];
+//		str = stringArray.toArray(str);
+		
+   	List<String>str = new ArrayList<String>();
+    	for(int i =0;i<stringArray.length;i++){
+       	str.add(stringArray[i]);
+	
+    	}		return str;
+		
+    	}
+
+		
+	
 	
 	/*
 	 Given a list of Strings, return an array containing the same Strings in the same order 
@@ -32,9 +45,23 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
-	}
+//		List<String>str = new ArrayList<String>(stringList);
+		String[] str = new String[stringList.size()];
 	
+   	for(int i =0;i<stringList.size();i++){
+   		str[i]=stringList.get(i);
+   	}
+//       	
+		return str;
+    	}		
+		
+    	
+	
+	
+
+
+
+
 	/*
 	 Given an array of Strings, return an ArrayList containing the same Strings in the same order 
 	 except for any words that contain exactly 4 characters.
@@ -43,9 +70,16 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+	   	List<String>str = new ArrayList<String>();
+    	for(int i = 0;i<stringArray.length;i++){
+    		if(stringArray[i].length()!=4){
+       	str.add(stringArray[i]);
+    		}
+    	}		return str;
 	}
-
+//	for (String element:thisIsAStringArray) {
+//	    if ( element.equals( stringToSearch )) {
+//	        found = true;
 
 	/*
 	 Given a List of Strings, return a new list in reverse order of the original. One obvious solution is to
@@ -56,8 +90,31 @@ public class Exercises {
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
 	public List<String> reverseList(List<String> stringList) {
-		return null;
+		
+		List<String> str = new ArrayList<String>();
+		Stack<String> stack = new Stack<String>();
+		stack.addAll(stringList);
+		for(int i =0;i<stringList.size();i++){
+		 
+		str.add(i,stack.pop());
+		}
+		return str;
 	}
+//	List<String> str = new ArrayList<String>();
+//	Stack<String> stack = new Stack<String>();
+//   	for(int i =0;i<stringList.size();i++){
+//   		stack.push(stringList.get(i));
+//   	}while(!stack.isEmpty()){
+//       	str=stack.pop();
+//		
+//    	}	return str;	
+//	Stack<Integer> stack = new Stack<Integer>();
+//	stack.push(45);
+//	stack.push(23);
+//	stack.push(44);
+//	
+//	while(!stack.isEmpty()){//stack.size() >=1 means the same thing
+//		System.out.println(stack.pop());
 
 	/*
 	 Given an array of ints, divide each int by 2, and return an ArrayList of Doubles.
@@ -66,9 +123,31 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+//		double[] a= new double[intArray.length];
+//		List<Double> int1= Arrays.asList(a);
+////		List<Double> int2 = Arrays.asList(int1);
+////		for(int i =0;i<intArray.length;i++){
+////		int1[i]=(double)( intArray[i]/2);
+//		
+//		for(int i = 0; i<intArray.length;i++){
+//			a[i]=(double) (intArray[i]/2);
+//		}
+		List<Double> int1= Arrays.asList();
+		double[] answer = new double[intArray.length];
+		for(int i = 0; i < intArray.length; i++) {
+		  answer[i] = intArray[i] / 2;
+		return answer;
+		
 	}
-	
+//	
+//	}
+//	return normal;
+//	double[] normal = new double[v.length];
+//	for(int a = 0; a < v.length; a++)
+//	{
+//	  normal[a] = v[a]/sum;
+//	}
+//	List<Double> list = Arrays.asList(doubleArray);
 	/*
 	 Given a List of Integers, return the largest value.
 	 findLargest( [11, 200, 43, 84, 9917, 4321, 1, 33333, 8997] ) -> 33333
@@ -76,9 +155,19 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		
+//		List<Integer> array = new ArrayList<Integer>();		
+				int max=0;
+//			 max = Collections.max(array);  
+		for(Integer i :integerList){
+			if(i>max){
+				max=i;
+			}
+		}
+			 return max;
 	}
-	
+
+//	for(int i=0; i<array.size();i++){
 	/*
 	 Given an array of Integers, return a List of Integers containing just the odd values.
 	 oddOnly( {112, 201, 774, 92, 9, 83, 41872} ) -> [201, 9, 83]
@@ -86,7 +175,13 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]  
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+		List<Integer> odd= new ArrayList<Integer>();
+		for(int i = 0;i<integerArray.length;i++){
+			if(integerArray[i]%2!=0){
+				odd.add(integerArray[i]);
+			}			
+		}
+		return odd;
 	}
 	
 	/* 
@@ -97,9 +192,24 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		return false;
-	}
+//		if(Arrays.asList(integerList).contains(intToFind)){
+//			return true;
+		   int numCount = 0;
+
+		    for (int x : integerList) {
+		        if (x == intToFind){
+		        	numCount++;
+		        }
+		    }if (numCount>=2){
+		    	return true;
+		    }return false;
+
+		    
+		}
+		
 	
+//	public boolean contains(final String[] array, final String key) {
+//	    return Arrays.asList(array).contains(key);
 	/*
 	 Given an array of Integers, return a List that contains the same Integers (as Strings). Except any multiple of 3
     should be replaced by the String "Fizz", any multiple of 5 should be replaced by the String "Buzz",
@@ -113,8 +223,25 @@ public class Exercises {
 	 HINT: To convert an integer x to a string you can call x.toString() in your code (e.g. if x = 1 then x.ToString() equals "1")
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+		List<String> x= new ArrayList<String>();
+		for(int i = 0;i<integerArray.length;i++){
+		if ((integerArray[i]%15)==0) {
+			x.add(new String("FizzBuzz"));
+		}if((integerArray[i]%5)==0){
+			x.add(new String("Buzz"));
+		}if((integerArray[i]%3)==0){
+			x.add(new String("Fizz"));
+		}
+		}
+		return x;
 	}
+//	List<Integer> odd= new ArrayList<Integer>();
+//	for(int i = 0;i<integerArray.length;i++){
+//		if(integerArray[i]%2!=0){
+//			odd.add(integerArray[i]);
+//		}			
+//	}
+//	return odd;
 
 	/*
 	 Given a list of Strings, return a list that contains the distinct values. In other words, no value is to be
@@ -123,9 +250,24 @@ public class Exercises {
 	 distinctValues( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"] ) -> ["jingle", "bells", "all", "the", "way"]
 	 */
 	public List<String> distinctValues(List<String> stringList) {
-		return null;
-	}
+//		Set<String> set = new HashSet<String>(stringList);
+//		Collection<String> odd = new HashSet<String>(stringList);
+//		  Set<String> s = new HashSet<String>();
+//		  List<String> set= new ArrayList<String>(s);
+//	        for (String a : stringList){
+//	               s.add(a);
+//	}
+		 
 
+		  
+		return set;
+	}
+//		for(int i =0;i<stringList.size();i++){
+//			set[i]=stringList.get(i);
+//					    	}		return set;
+//		HashSet<String> set = new HashSet<String>();
+	
+//	Collection<Type> noDups = new HashSet<Type>(c);
 	/*
 	 Given two lists of Integers, interleave them beginning with the first element in the first list followed
 	 by the first element of the second. Continue interleaving the elements until all elements have been interwoven.
@@ -134,8 +276,33 @@ public class Exercises {
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
+		 for ( int i = 0; i < listTwo.size(); i++ ) {
+		        listOne.add( Math.min( i*2+1, listOne.size()), listTwo.get( i ));
+	    }
+	
+		return listOne;
 	}
+//		  ArrayList<Integer> answer = new ArrayList<>(listOne.size() + listTwo.size());
+//
+//		    for(int i = 0, j = 0; i < listOne.size() || j < listTwo.size(); i++, j++) {
+//		        if(i < listOne.size()) answer.add(listOne.get(i));
+//		        if(j < listTwo.size()) answer.add(listTwo.get(j));
+//		    }
+//		    listOne.clear();
+//		    listOne.addAll(answer);
+//	    }
+//	public static <T> List<T> interleave( final List<T> l1, final List<T> l2 ) {
+//	    for ( int i = 0; i < l2.size(); i++ ) {
+//	        l1.add( Math.min( i*2+1, l1.size()), l2.get( i ));
+//	    }
+//	    return l1;
+	
+//		ArrayList<Integer> list = new ArrayList<Integer>(listOne);
+//		list.addAll(listTwo);
+//		Collections.sort(list);
+//		return list;
+		
+	
 
 	/*
 	 Given a list of Integers representing seat numbers, group them into ranges 1-10, 11-20, and 21-30.
@@ -147,7 +314,16 @@ public class Exercises {
 	 boardingGate( [0, -1, 44, 31, 17, 7, 27, 16, 26, 6] ) -> [7, 6, 17, 16, 27, 26]
 	 */
 	public List<Integer> boardingGate(List<Integer> seatNumberList) {
-		return null;
+		Queue<Integer> queue1 = new LinkedList<Integer>();
+		Queue<Integer> queue2 = new LinkedList<Integer>();
+		Queue<Integer> queue3 = new LinkedList<Integer>();
+		while((seatNumberList).peek()!=null){
+			
+			seatNumberList.poll();
+		}
+		return (queue1 + queue2 + queue3);
 	}
 
 }
+//while(queue.peek() != null) {  //.peek looks at first element
+//	System.out.println(queue.poll()); // .poll removes first element and returns it

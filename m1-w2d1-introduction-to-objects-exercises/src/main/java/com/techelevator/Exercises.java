@@ -510,7 +510,8 @@ int countxx=0;
 	
 		for(int i=0;i<str.length();i++){
 			if(str.length()%2==0);
-	    result=str.substring(0, 2)+result;
+	    result=str.substring(0, 2);
+	    if (str.length()%4==0);
 	str=str.substring(4, str.length());
 		}
 		return result;
