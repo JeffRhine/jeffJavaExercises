@@ -446,16 +446,32 @@ int countxx=0;
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
-		int count= 0;
-		String end=str.substring(str.length()-2,str.length());
-		for( int i = 0; i < str.length(); i++){
-	if (str.substring(i, i+2).equalsIgnoreCase(end)){
-				count= count++;
-	}	
-							
-		}	return count;	
-		
+		//get last two characters
+		if(str.length()<=2){
+			return 0;
+		}
+		String lastTwo = str.substring(str.length()-2);
+		int count =0;
+		for( int i = 0; i < str.length()-2; i++){
+			if(str.substring(i, i+2).equals(lastTwo)){
+				count++;
+			}
+		}return count;
 	}
+//		}String lastTwo = str.substring(str.length()-2);
+//		while(foundIndex = str.indexOf(lastTwo,matchIndex)){
+		//go through the string find out haw many times its in there
+	
+//		int count= 0;
+//		String end=str.substring(str.length()-2,str.length());
+//		for( int i = 0; i < str.length(); i++){
+//	if (str.substring(i, i+2).equalsIgnoreCase(end)){
+//				count= count++;
+//	}	
+//							
+//		}	return count;	
+		
+	
 
 	/*
 	 Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end 

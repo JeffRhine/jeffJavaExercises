@@ -123,20 +123,15 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-//		double[] a= new double[intArray.length];
-//		List<Double> int1= Arrays.asList(a);
-////		List<Double> int2 = Arrays.asList(int1);
-////		for(int i =0;i<intArray.length;i++){
-////		int1[i]=(double)( intArray[i]/2);
-//		
-//		for(int i = 0; i<intArray.length;i++){
-//			a[i]=(double) (intArray[i]/2);
-//		}
+
 		List<Double> int1= Arrays.asList();
 		double[] answer = new double[intArray.length];
 		for(int i = 0; i < intArray.length; i++) {
-		  answer[i] = intArray[i] / 2;
-		return answer;
+			
+		  answer[i] = (intArray[i] / 2);
+		  int1.add(answer[i]);
+		}
+		return int1;
 		
 	}
 //	
@@ -222,18 +217,29 @@ public class Exercises {
 	 
 	 HINT: To convert an integer x to a string you can call x.toString() in your code (e.g. if x = 1 then x.ToString() equals "1")
 	 */
+//	List<List> listOfMixedTypes = new ArrayList<List>();
+//
+//	ArrayList<String> listOfStrings = new ArrayList<String>();
+//	ArrayList<Integer> listOfIntegers = new ArrayList<Integer>();
+//
+//	listOfMixedTypes.add(listOfStrings);
+//	listOfMixedTypes.add(listOfIntegers);
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		List<String> x= new ArrayList<String>();
-		for(int i = 0;i<integerArray.length;i++){
-		if ((integerArray[i]%15)==0) {
-			x.add(new String("FizzBuzz"));
-		}if((integerArray[i]%5)==0){
-			x.add(new String("Buzz"));
-		}if((integerArray[i]%3)==0){
-			x.add(new String("Fizz"));
-		}
-		}
-		return x;
+		
+		
+	List<String> words= new ArrayList<String>();
+	for(Integer ints:integerArray){
+	if ((ints%15)==0) {
+		words.add("FizzBuzz");
+	}if((ints%5)==0){
+		words.add("Buzz");
+	}if((ints%3)==0){
+		words.add("Fizz");
+	}else {
+		words.add(ints.toString());
+	}System.out.println(words);
+	}return words;
+	
 	}
 //	List<Integer> odd= new ArrayList<Integer>();
 //	for(int i = 0;i<integerArray.length;i++){
@@ -241,8 +247,13 @@ public class Exercises {
 //			odd.add(integerArray[i]);
 //		}			
 //	}
-//	return odd;
-
+//	List<String> a=Arrays.toString(integerArray);
+//	for(int i = 0;i<integerArray.length;i++){
+//		if(integerArray[i]%15==0){
+//			a.replace(integerArray[i],"FizzBuzz");
+//		}
+//	return a;
+//}
 	/*
 	 Given a list of Strings, return a list that contains the distinct values. In other words, no value is to be
 	 included more than once in the returned list. (Hint: Think Set)
@@ -250,18 +261,21 @@ public class Exercises {
 	 distinctValues( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"] ) -> ["jingle", "bells", "all", "the", "way"]
 	 */
 	public List<String> distinctValues(List<String> stringList) {
-//		Set<String> set = new HashSet<String>(stringList);
-//		Collection<String> odd = new HashSet<String>(stringList);
-//		  Set<String> s = new HashSet<String>();
-//		  List<String> set= new ArrayList<String>(s);
-//	        for (String a : stringList){
-//	               s.add(a);
-//	}
-		 
-
-		  
-		return set;
+			Set<String> set=new HashSet<String>(stringList);
+			List<String> list = new ArrayList<String>(set);
+		return list;
 	}
+//		System.out.println("Unique gas count: " + uniqueGas.size());
+//	Set<String> set = new HashSet<String>(stringList);
+//	Collection<String> odd = new HashSet<String>(stringList);
+//	  Set<String> s = new HashSet<String>();
+//	  List<String> set= new ArrayList<String>(s);
+//        for (String a : stringList){
+//               s.add(a);
+//}
+	 
+
+	
 //		for(int i =0;i<stringList.size();i++){
 //			set[i]=stringList.get(i);
 //					    	}		return set;
@@ -282,25 +296,7 @@ public class Exercises {
 	
 		return listOne;
 	}
-//		  ArrayList<Integer> answer = new ArrayList<>(listOne.size() + listTwo.size());
-//
-//		    for(int i = 0, j = 0; i < listOne.size() || j < listTwo.size(); i++, j++) {
-//		        if(i < listOne.size()) answer.add(listOne.get(i));
-//		        if(j < listTwo.size()) answer.add(listTwo.get(j));
-//		    }
-//		    listOne.clear();
-//		    listOne.addAll(answer);
-//	    }
-//	public static <T> List<T> interleave( final List<T> l1, final List<T> l2 ) {
-//	    for ( int i = 0; i < l2.size(); i++ ) {
-//	        l1.add( Math.min( i*2+1, l1.size()), l2.get( i ));
-//	    }
-//	    return l1;
-	
-//		ArrayList<Integer> list = new ArrayList<Integer>(listOne);
-//		list.addAll(listTwo);
-//		Collections.sort(list);
-//		return list;
+//		  
 		
 	
 
@@ -314,14 +310,27 @@ public class Exercises {
 	 boardingGate( [0, -1, 44, 31, 17, 7, 27, 16, 26, 6] ) -> [7, 6, 17, 16, 27, 26]
 	 */
 	public List<Integer> boardingGate(List<Integer> seatNumberList) {
+		Queue<Integer> queue = new LinkedList<Integer>();
 		Queue<Integer> queue1 = new LinkedList<Integer>();
 		Queue<Integer> queue2 = new LinkedList<Integer>();
 		Queue<Integer> queue3 = new LinkedList<Integer>();
-		while((seatNumberList).peek()!=null){
-			
-			seatNumberList.poll();
+		List<Integer> queueAll=new ArrayList<Integer>();
+		for(int i : seatNumberList){
+			if(i<1||i>30){
+				queue.add(i);	
 		}
-		return (queue1 + queue2 + queue3);
+			if (i>1&&i<11){
+				queue1.add(i);
+			}if(i>10&&i<21){
+				queue2.add(i);
+			}if(i>20&&i<31){
+				queue3.add(i);
+			}
+			queueAll.addAll(queue1);
+			queueAll.addAll(queue2);
+			queueAll.addAll(queue3);
+		}
+		return queueAll;
 	}
 
 }
