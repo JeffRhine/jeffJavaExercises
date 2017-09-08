@@ -232,15 +232,20 @@ public class Exercises {
 		
 	List<String> words= new ArrayList<String>();
 	for(Integer ints:integerArray){
+		
 	if ((ints%15)==0) {
 		words.add("FizzBuzz");
-	}if((ints%5)==0){
+	}
+	else if((ints%5)==0){
 		words.add("Buzz");
-	}if((ints%3)==0){
+	}
+	else if((ints%3)==0){
 		words.add("Fizz");
-	}else {
+	}
+	else {
 		words.add(ints.toString());
-	}//System.out.println(words);
+	}
+	System.out.println(words);
 	}return words;
 	
 	}
