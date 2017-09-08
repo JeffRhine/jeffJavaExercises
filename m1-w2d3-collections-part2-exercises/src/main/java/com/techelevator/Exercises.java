@@ -342,10 +342,11 @@ public class Exercises {
 			for( int i = 0; i < word.length()-2; i++){
 				if(word.substring(i, i+2).equals(lastTwo)){
 					times++;
-					count.put(word, times);
+					
 				}
 			}
-			System.out.println(count);
+			count.put(word, times);
+//			System.out.println(count);
 			}return count;
 		}
 	}			
