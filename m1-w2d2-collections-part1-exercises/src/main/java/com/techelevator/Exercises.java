@@ -124,17 +124,20 @@ public class Exercises {
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
 
-		List<Double> int1= Arrays.asList();
+		List<Double> int1= new ArrayList<>();
+		
 		double[] answer = new double[intArray.length];
 		for(int i = 0; i < intArray.length; i++) {
-			
-		  answer[i] = (intArray[i] / 2);
+		 answer[i]=intArray[i];
+		  answer[i] = (answer[i] / 2);
 		  int1.add(answer[i]);
 		}
 		return int1;
 		
 	}
-//	
+//	double[] doubles = new double[ints.length];
+//	for(int i=0; i<ints.length; i++) {
+//	    doubles[i] = ints[i];
 //	}
 //	return normal;
 //	double[] normal = new double[v.length];
@@ -237,7 +240,7 @@ public class Exercises {
 		words.add("Fizz");
 	}else {
 		words.add(ints.toString());
-	}System.out.println(words);
+	}//System.out.println(words);
 	}return words;
 	
 	}
@@ -319,17 +322,17 @@ public class Exercises {
 			if(i<1||i>30){
 				queue.add(i);	
 		}
-			if (i>1&&i<11){
+			if (i>=1&&i<11){
 				queue1.add(i);
 			}if(i>10&&i<21){
 				queue2.add(i);
 			}if(i>20&&i<31){
 				queue3.add(i);
 			}
-			queueAll.addAll(queue1);
-			queueAll.addAll(queue2);
-			queueAll.addAll(queue3);
-		}
+			
+		}queueAll.addAll(queue1);
+		queueAll.addAll(queue2);
+		queueAll.addAll(queue3);
 		return queueAll;
 	}
 

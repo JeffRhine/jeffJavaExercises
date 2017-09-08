@@ -259,7 +259,7 @@ public class Exercises {
 		
 		for(String x: words){
 			if(count.containsKey(x)){
-				count.put(x,true);
+				count.put(x,true);//put value back into map
 			}else{
 				count.put(x, false);
 			}
@@ -336,28 +336,32 @@ public class Exercises {
 	public Map<String, Integer> last2Revisted(String[] words) {
 		Map<String,Integer> count= new HashMap<>();
 		for(String word: words) {//for each loop of each word in the words array
+//			if(str.length()<=2){
+//				return 0;
+//			}
+			String lastTwo = word.substring(word.length()-2);
+			int times=0;
+			for( int i = 0; i < word.length()-2; i++){
+				if(word.substring(i, i+2).equals(lastTwo)){
+					times++;
+					count.put(word, times);
+				}
+			}
 			
-			if(counts.containsKey(word)){
-				int currentCount = counts.get(word);//take value out of map, counts is the map
-				currentCount++;//increment value
-				counts.put(word, currentCount);//put value back into map
-			}else {
-				counts.put(word,1);
-			}
-					
+			}return count;
 		}
-		return counts;	
-		//get last two characters
-		if(str.length()<=2){
-			return 0;
-		}
-		String lastTwo = str.substring(str.length()-2);
-		int count =0;
-		for( int i = 0; i < str.length()-2; i++){
-			if(str.substring(i, i+2).equals(lastTwo)){
-				count++;
-			}
-		}return count;
+	}			
+//			if(count.containsKey(word)){
+//				int currentCount = count.get(word);//take value out of map, counts is the map
+//				currentCount++;//increment value
+//				count.put(word, currentCount);//put value back into map
+//			}else {
+//				count.put(word,1);
+//			}
+//					
+//		}
+//		return count;	
+//		//get last two characters
+//	
+//	
 	
-	}
-}
