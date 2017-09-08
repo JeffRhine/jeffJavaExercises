@@ -335,10 +335,8 @@ public class Exercises {
 	 */
 	public Map<String, Integer> last2Revisted(String[] words) {
 		Map<String,Integer> count= new HashMap<>();
-		for(String word: words) {//for each loop of each word in the words array
-//			if(str.length()<=2){
-//				return 0;
-//			}
+			for(String word: words) {//for each loop of each word in the words array
+
 			String lastTwo = word.substring(word.length()-2);
 			int times=0;
 			for( int i = 0; i < word.length()-2; i++){
@@ -347,7 +345,7 @@ public class Exercises {
 					count.put(word, times);
 				}
 			}
-			
+			System.out.println(count);
 			}return count;
 		}
 	}			
