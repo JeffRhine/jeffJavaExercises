@@ -23,19 +23,27 @@ public class ElevatorTest {
 		assertEquals(10,sut.getNumberOfLevels());
 	}
 	@Test
-	public void testUpWhenOpen() {
+	public void testMovingWhenOpen() {
 		sut.isMoving();
 		sut.OpenDoor();	
-		assertEquals(false,sut.isDoorOpen());
+		assertEquals(false,sut.GoUp(0));
 	}
 	@Test
 	public void testUpOverTop() {
 		sut.GoUp(11);
-		assertEquals(10,sut.getNumberOfLevels());
+		assertEquals(false,sut.GoUp(0));
 	}
 	@Test
-	public void testDown() {
+	public void testUp() {
+		sut.CloseDoor();
+		sut.GoUp(10);
+		assertEquals(10,sut.getCurrentLevel());
+	}
+	@Test
+	public void testDown(){
+		sut.CloseDoor();
+		sut.GoUp(10);
 		sut.GoDown(5);
-		assertEquals(5,sut.getNumberOfLevels());
+		assertEquals(5,sut.getCurrentLevel());
 	}
 }

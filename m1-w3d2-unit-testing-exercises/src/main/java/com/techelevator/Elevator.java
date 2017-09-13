@@ -86,12 +86,11 @@ public class Elevator {
      * @param desiredFloor Desired floor to go to
      * @return If the elevator was able to move up
      */
-    public boolean GoUp(int desiredFloor)
-    {
-        currentLevel = desiredFloor;
+    public boolean GoUp(int desiredFloor) {
+       
 
-        if (desiredFloor > currentLevel && desiredFloor <= numberOfLevels && doorOpen)
-        {
+        if (desiredFloor > currentLevel && desiredFloor <= numberOfLevels && !doorOpen){
+        	 currentLevel = desiredFloor;
             return true;
         }
         else
@@ -99,7 +98,12 @@ public class Elevator {
             return false;
         }
     }
-
+//    public	void goUp(int desiredFloor){
+//		if((doorOpen==false)&&(currentFloor<numberOfFloors)){
+//			currentFloor++;
+//		}
+//		
+//	}
     /**
      * Moves the elevator down, as long as the door is closed and desired floor is lower than current but not past 1 
      * @param desiredFloor Floor to go to
@@ -107,9 +111,9 @@ public class Elevator {
      */
     public boolean GoDown(int desiredFloor)
     {
-        if (!doorOpen && desiredFloor < currentLevel && desiredFloor > 0)
-        {
-            currentLevel -= desiredFloor;
+        if (!doorOpen && desiredFloor < currentLevel && desiredFloor > 0){
+        	
+            currentLevel = desiredFloor;
             return true;
         }
 
