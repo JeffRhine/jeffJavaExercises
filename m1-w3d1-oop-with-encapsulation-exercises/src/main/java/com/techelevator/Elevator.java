@@ -18,13 +18,13 @@ private boolean doorOpen;
 	}
 	public	void goUp(int desiredFloor){
 		if((doorOpen==false)&&(currentFloor<numberOfFloors)){
-			currentFloor++;
+			currentFloor=desiredFloor;
 		}
 		
 	}
 	public void goDown(int desiredFloor){
 		if((doorOpen==false)&&(currentFloor>1)){
-			currentFloor--;
+			currentFloor=desiredFloor;
 		}
 	}
 

@@ -46,4 +46,9 @@ public class ElevatorTest {
 		sut.GoDown(5);
 		assertEquals(5,sut.getCurrentLevel());
 	}
+	@Test
+	public void testIsMoving(){
+		
+		assertEquals(true,sut.isMoving());
+	}
 }
