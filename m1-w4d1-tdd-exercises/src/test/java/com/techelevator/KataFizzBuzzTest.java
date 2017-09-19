@@ -48,7 +48,11 @@ public class KataFizzBuzzTest {
 		List<String> answer = sut.fizzBuzz(new Integer[]{52});
 		assertEquals("Buzz", answer.get(0));
 	}
-	
+	@Test
+	public void test37(){
+		List<String> answer = sut.fizzBuzz(new Integer[]{37});
+		assertEquals("Fizz", answer.get(0));
+	}
 }
 //public List<String> fizzBuzzList(Integer[] integerArray) {
 //	
