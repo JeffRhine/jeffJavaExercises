@@ -26,14 +26,17 @@ public class KataFizzBuzz {
 	}
 	else {
 		words.add(ints.toString());
+		for(String word:words){
+			if(word.contains("5")){
+				words.add("Buzz");
+			}else if(word.contains("3")){
+				words.add("Fizz");
+			}
+		}
+		
+		
 	}
-//		for(String word:words){
-//			if(word.matches("5")){
-//				words.add("Buzz");
-//			}else if(word.matches("3")){
-//				words.add("Fizz");
-//			}
-//		}
+		
 	System.out.println(words);
 	}return words;
 	
