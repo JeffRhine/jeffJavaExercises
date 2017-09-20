@@ -22,7 +22,7 @@ public class WordSearch {
 				while(input2.hasNextLine()){
 					String line = input2.nextLine();
 					lineCount++;
-					if(line.contains(userInput)){
+					if(line.contains( userInput )){
 
 						System.out.println(lineCount+") "+line);
 					}
