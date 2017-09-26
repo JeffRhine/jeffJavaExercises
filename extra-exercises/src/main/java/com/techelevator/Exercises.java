@@ -12,9 +12,24 @@ public class Exercises {
     arrayDeduplication([1, 1, 1]) → [1]
     */
     public int[] arrayDeduplication(int[] nums) {
-        return null;
+    	int count=0;
+    	if(nums.length<=1){
+    		return nums;
+    	}else{
+    	for(int i=0;i<nums.length-1;i++){
+    		if (nums[i]!=nums[i+1]){
+    			count++;
+    		}
+    	}
+    	int[] num = new int[count];
+    	for(int j=0;j<nums.length-1;j++){
+    		if (nums[j]!=nums[j+1]){
+    			num[j]=nums[j];
+    		}
+    	}  return num;
     }
-    
+
+    }    
     /*
     CHALLENGE: Using array A and array B, return an array that is the intersection of both A and B.
     The intersection includes numbers that appear in both arrays.
@@ -44,7 +59,11 @@ public class Exercises {
     blackjack(19, 22) → 19
     */
     public int blackjack(int a, int b) {
-        return 0;
+    	if((a>b)&&(a<=21)){
+    		return a;
+    	}else if((b>a)&&(b<=21)){
+    		return b;
+    	}return 0;
     }
     
     /*
