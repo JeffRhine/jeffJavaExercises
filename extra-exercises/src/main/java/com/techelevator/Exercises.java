@@ -48,8 +48,17 @@ public class Exercises {
     arraySort([8, 13, 9, 12]) → [8, 9, 12, 13]        
     */
     public int[] arraySort(int[] nums) {
-        return null;
-    }
+    	 int temp = 0;
+         for (int i = 0; i < nums.length - 1; i++) {
+             for (int j = i + 1; j < nums.length; j++) {
+                 if (nums[i] > nums[j]) {
+                     temp = nums[j];
+                     nums[j] = nums[i];
+                     nums[i] = temp;
+                 }
+             }
+         } return nums;
+         }
 
     /*
     Given 2 int values greater than 0, return whichever value is nearest to 21 without going over.

@@ -13,10 +13,12 @@
 -- The results should be ordered alphabetically by state name and then by city 
 -- name. 
 -- (19 rows)
+SELECT CONCAT(name, ', ' , district)  FROM city;
+-- I get an error if I don't have an unusable select statement above the first problem.
 
 SELECT CONCAT(name, ', ' , district) AS name_and_state, population FROM city
-WHERE countrycode='USA';********
-
+WHERE district IN('Pennsylvania','West Virginia','Kentucky','Indiana','Michigan')
+ORDER BY district, name; 
 -- 2. The name, country code, and region of all countries in Africa.  The name and
 -- country code should be returned as a single column named country_and_code   
 -- and should contain values such as ‘Angola (AGO)’ , district IN ('Pennsylvania', 'West Virginia', 'Kentucky', 'Indiana', 'Michigan') 
