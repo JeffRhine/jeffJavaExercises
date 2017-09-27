@@ -133,6 +133,9 @@ public class Exercises {
     lastDigit(23, 19, 3) → true
     */
     public boolean lastDigit(int a, int b, int c) {
+    	if((a%10==b%10)||(a%10==c%10)){
+    		return true;
+    	}
         return false;
     }
 
@@ -146,6 +149,9 @@ public class Exercises {
     makeBricks(3, 2, 10) → true
     */
     public boolean makeBricks(int small, int big, int goal) {
+    	if((small +(big*5))>=goal){
+    		return true;
+    	}
         return false;
     }
 
@@ -258,6 +264,10 @@ public class Exercises {
     tripleUp([1, 2, 4]) → false
     */
     public boolean tripleUp(int[] nums) {
+    	for(int i =0;i>nums.length-2;i++)
+    		if((nums[i]==nums[i+1]+1)&&(nums[i+1]==nums[i+2]+1)){
+    			return true;
+    		}
         return false;
     }
 
