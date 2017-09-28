@@ -154,8 +154,7 @@ join film_actor fa ON fa.actor_id=a.actor_id
 join film f on f.film_id=fa.film_id
 join inventory i ON f.film_id=i.film_id
 join rental r on r.inventory_id=i.inventory_id
---join customer c on c.store_id=i.store_id
-group by a.first_name, a.last_name
+group by  a.actor_id
 order by count desc limit 10;
 
 -- 20. The top 5 “Comedy” actors ranked by number of rentals of films in the “Comedy” category starring that actor 
