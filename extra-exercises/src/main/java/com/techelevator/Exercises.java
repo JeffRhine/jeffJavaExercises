@@ -68,9 +68,12 @@ public class Exercises {
     blackjack(19, 22) → 19
     */
     public int blackjack(int a, int b) {
-    	if((a>b)&&(a<=21)){
+    	if(a>21&&b>21){
+    		return 0;
+    	}
+    	if((a>b)&&(a<22)||(b>21)){
     		return a;
-    	}else if((b>a)&&(b<=21)){
+    	} if((b>a)&&(b<22)||(a>21)){
     		return b;
     	}return 0;
     }
@@ -84,6 +87,9 @@ public class Exercises {
     closeFar(4, 1, 3) → true
     */
     public boolean closeFar(int a, int b, int c) {
+    	if((Math.abs(a)-Math.abs(b)==1)||(Math.abs(a)-Math.abs(c)==1)&&(Math.abs(a)-Math.abs(b)>=2)||(Math.abs(a)-Math.abs(c)>=2)){
+    		return true;
+    	}
         return false;
     }
 
@@ -95,7 +101,14 @@ public class Exercises {
     countClumps([1, 1, 1, 1, 1]) → 1
     */
     public int countClumps(int[] nums) {
-        return 0;
+    	int count = 0;
+    	for (int i=0; i<nums.length-1;i++){
+    		if(nums[i]==nums[i+1]){
+    			count++;
+    		}
+    		
+    	}
+        return count;
     }
 
     /*
@@ -196,7 +209,17 @@ public class Exercises {
     more14([1, 1]) → true
     */
     public boolean more14(int[] nums) {
-        return false;
+    	
+    	for(int i=0;i>nums.length;i++){
+    		int count1=0;
+        	int count4=0;
+    		if(nums[i]==1){
+    			count1++;
+    		}if (nums[i]==4){
+    			count4++;
+    		}return count1>count4;
+    	}return false;
+        
     }
     
     /*
@@ -208,7 +231,12 @@ public class Exercises {
     * noTriples([1, 1, 1, 2, 2, 2, 1]) → false
     */
     public boolean noTriples(int[] nums) {
-        return false;
+    	for(int n=0;n>nums.length-2;n++){
+    		if ((nums[n]==nums[n+1])&&(nums[n]==nums[n+2])){
+    			return false;
+    		}
+    	}
+        return true;
     }
 
     /*
