@@ -11,21 +11,20 @@ public class Exercises {
     arrayDeduplication([]) → []        
     arrayDeduplication([1, 1, 1]) → [1]
     */
-    public int[] arrayDeduplication(int[] nums) {
+   public int[] arrayDeduplication(int[] nums) {
     	int count=0;
     	if(nums.length<=1){
     		return nums;
-    	}else{
-    	for(int i=0;i<nums.length-1;i++){
-    		if (nums[i]!=nums[i+1]){
-    			count++;
+    	}else{    	for(int i=0;i<nums.length-1;i++){
+   		if (nums[i]!=nums[i+1]){
+   			count++;
     		}
-    	}
-    	int[] num = new int[count];
+   	}
+   	int[] num = new int[count];
     	for(int j=0;j<nums.length-1;j++){
-    		if (nums[j]!=nums[j+1]){
+   		if (nums[j]!=nums[j+1]){
     			num[j]=nums[j];
-    		}
+   		}
     	}  return num;
     }
 
@@ -120,8 +119,8 @@ public class Exercises {
     findPermutations("A") → {"A"}
     findPermutations("ABC") → {"ABC","ACB","BAC","BCA","CAB","CBA"}
     */
-    public List<String> findPermutations(String str)
-    {            
+    public List<String> findPermutations(String str){
+    	
         return null;
     }
 
@@ -134,6 +133,12 @@ public class Exercises {
     * has271([2, 7, 1]) → true     
     */
     public boolean has271(int[] nums) {
+    	for(int i=0;i>nums.length-2;i++){
+    		if((nums[i]+1==nums[i+5])&&(nums[i]+2==nums[i-1])||(nums[i]+2==nums[i-2])||(nums[i]+2==nums[i-3])
+    				||(nums[i]+2==nums[i])||(nums[i]+2==nums[i+1])||(nums[i]+2==nums[i+2])||(nums[i]+2==nums[i+3])){
+    			return true;
+    		}
+    	}
         return false;
     }
 
@@ -162,7 +167,7 @@ public class Exercises {
     makeBricks(3, 2, 10) → true
     */
     public boolean makeBricks(int small, int big, int goal) {
-    	if((small +(big*5))>=goal){
+    	if((small +(big*5))>=goal||goal%5>small){
     		return true;
     	}
         return false;

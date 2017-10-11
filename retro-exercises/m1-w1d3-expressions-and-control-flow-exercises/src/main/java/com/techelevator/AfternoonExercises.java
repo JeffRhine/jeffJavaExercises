@@ -213,6 +213,11 @@ public class AfternoonExercises {
 	 max1020(11, 9) → 11
 	 */
 	public int max1020(int a, int b) {
+		if(a>b&&a<20&&a>10){
+			return a;
+		}if (b>a&&b<20&&b>10){
+			return b;
+		}
 		return 0;
 	}
 
@@ -226,6 +231,9 @@ public class AfternoonExercises {
 	 cigarParty(70, true) → true
 	 */
 	public boolean cigarParty(int cigars, boolean isWeekend) {
+		if(cigars>40&&cigars<60&&!isWeekend||cigars>40&&isWeekend){
+			return true;
+		}
 		return false;
 	}
 
@@ -240,7 +248,12 @@ public class AfternoonExercises {
 	 dateFashion(5, 5) → 1
 	 */
 	public int dateFashion(int you, int date) {
-		return 0;
+		if(you>7||date>7){
+			return 2;
+		}if(you<3||date<3){
+			return 0;
+		}
+		return 1;
 	}
 
 	/*
@@ -300,6 +313,11 @@ public class AfternoonExercises {
 	 in1To10(11, true) → true
 	 */
 	public boolean in1To10(int n, boolean outsideMode) {
+		if(n>0&&n<11&&!outsideMode){
+			return false;
+		}if(outsideMode&&n<=1||n>=10){
+			return false;
+		}
 		return false;
 	}
 
@@ -448,6 +466,9 @@ public class AfternoonExercises {
 	 inOrder(1, 1, 2, true) → true
 	 */
 	public boolean inOrder(int a, int b, int c, boolean bOk) {
+		if(b>a&&c>b||c>b&&bOk){
+			return true;
+		}
 		return false;
 	}
 
@@ -460,6 +481,9 @@ public class AfternoonExercises {
 	 inOrderEqual(5, 5, 7, true) → true
 	 */
 	public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
+		if(b>a&&c>b||b>=a&&c>=b&&equalOk){
+			return true;
+		}
 		return false;
 	}
 

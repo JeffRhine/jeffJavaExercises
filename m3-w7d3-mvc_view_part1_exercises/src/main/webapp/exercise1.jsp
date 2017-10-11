@@ -26,6 +26,38 @@
 	<body>
 		<h1>Exercise 1 - FizzBuzz</h1>
 		<ul>
+	<%-- 	<th>fizzbuzz</th> 
+		
+		
+  	<td><c:out value="${fizzbuzz}"/></td>  --%>
+		
+	
+		<c:forEach begin="1" end="100" var="fizzbuzz">
+		
+		
+			<c:choose>
+				<c:when test="${fizzbuzz %15==0}">
+						<li class = "fizzbuzz" >fizzbuzz</li>
+					</c:when>
+					<c:when test="${fizzbuzz % 3==0}">
+						<li class = "fizz" >fizz</li>
+					</c:when>
+					<c:when test="${fizzbuzz %5==0}">
+						<li class = "buzz" >buzz</li>
+					</c:when>
+				
+					
+					
+					<c:otherwise>
+						<li ><c:out value="${fizzbuzz}"/></li>
+					</c:otherwise>
+				</c:choose>
+					
+				
+				
+				</tr>	
+		
+		</c:forEach>
 			<%--
 				Add a list item (i.e. <li>) containing each of the numbers from 1 to 100.
 				
