@@ -34,12 +34,4 @@
 		</ul>
 	</body>
 </html>
- int fibo = 1;
- int fiboPrev = 1;
- for(int i = 2; i < n; ++i){
-  int temp = fibo;
-  fibo += fiboPrev;
-  fiboPrev = temp;
- }
- return fibo;
-}
+
