@@ -56,3 +56,67 @@ section {
 	background-color: #FFF;
 	border-radius: 7px;
 }
+
+
+
+
+img.rating {
+	width: 100px;
+}
+img.productImage{
+	width: 100%;
+	}
+tr.greyed {
+	background-color: #d9d9d9;
+}
+tr.greyed >th {
+	background: white;
+}
+#productTable {
+	-webkit-column-width: 300px;
+}
+
+.productTiles {
+	display: inline-grid;
+	max-width: 31%;
+	grid-template-columns: 3fr 3fr 3fr;
+	grid-template-rows: 4fr 1fr 1 fr 1fr 1fr;
+	
+	border-radius:10%;
+	margin:.5em;
+}
+
+.productImage {
+	grid-column: 1/4;
+	grid-row:1/2;
+	border-radius:10% 10% 0% 0%;
+}
+
+.productName {
+	grid-column: 1/4;
+	grid-row: 2/3;
+	text-align: center;
+}
+
+.weight {
+	grid-column: 1/4;
+	grid-row: 4/5;
+	text-align: center;
+	
+}
+.mfg {
+	grid-column: 1/4;
+	grid-row: 3/4;
+	text-align: center;
+}
+
+.stars {
+	grid-column: 1/4;
+	grid-row: 5/6;
+	width:5em;
+	text-align: center;
+}
+.price {
+	color: red;
+	text-align: center;
+}
