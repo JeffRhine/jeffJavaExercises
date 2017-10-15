@@ -56,10 +56,6 @@ section {
 	background-color: #FFF;
 	border-radius: 7px;
 }
-
-
-
-
 img.rating {
 	width: 100px;
 }
@@ -78,45 +74,154 @@ tr.greyed >th {
 
 .productTiles {
 	display: inline-grid;
-	max-width: 31%;
-	grid-template-columns: 3fr 3fr 3fr;
-	grid-template-rows: 4fr 1fr 1 fr 1fr 1fr;
+	max-width: 30%;
 	
+	grid-template-rows: 50% 10% 10% 10% 10% 10%;
 	border-radius:10%;
 	margin:.5em;
 }
 
 .productImage {
-	grid-column: 1/4;
+
 	grid-row:1/2;
 	border-radius:10% 10% 0% 0%;
 }
 
 .productName {
-	grid-column: 1/4;
+	
 	grid-row: 2/3;
 	text-align: center;
-}
-
-.weight {
-	grid-column: 1/4;
-	grid-row: 4/5;
-	text-align: center;
-	
+	font-size:14pt;
+		margin: auto;
 }
 .mfg {
-	grid-column: 1/4;
+	
 	grid-row: 3/4;
 	text-align: center;
+	font-size:14pt;
+		margin:auto;
+		
 }
-
-.stars {
-	grid-column: 1/4;
-	grid-row: 5/6;
-	width:5em;
+.priceTile {
+	color: red;
 	text-align: center;
+	grid-row: 4/5;
+	font-size:8pt;
+		margin:auto;
+}
+.weight {
+	grid-row: 5/6;
+	text-align: center;
+	font-size:12pt;
+		margin:auto;
+}
+.stars {
+	grid-row: 6/7;
+	margin:auto;
+	width:40%;
+	text-align: center;			
 }
 .price {
 	color: red;
 	text-align: center;
+}
+#productList {
+	display: grid;
+	max-width: 80%;
+	grid-template-columns: 40% 60%;
+	grid-template-rows: 30px 30px 30px 30px 30px 30px 30px;
+	border-radius:10%;
+	margin:.5em;
+}
+
+img.listImage{
+	grid-area: 1/1/7/2;
+	justify-self:start;
+	width:250px;
+}
+.listName{
+	grid-column:2/5;
+	grid-row:1/2;
+	font-size:10pt;
+		
+		text-align: left;
+}
+.mfgList{
+	grid-column:2/5;
+	grid-row:2/3;
+	font-size:10t;
+		
+		text-align: left;
+}
+.priceList{
+	grid-column:2/5;
+	grid-row:3/4;
+	font-size:10pt;
+		
+		color: red;
+	text-align: left;
+}
+.weightList{
+	grid-column:2/5;
+	grid-row:4/5;
+	text-align: left;
+	font-size:8pt;
+		
+}
+.starsList{
+	grid-column:2/5;
+	grid-row:5/6;
+	text-align: left;
+	width: 30%;
+		
+}
+
+.productDetail{
+	display: grid;
+	grid-template-columns: 40% 60%;
+	grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+	border-radius:10%;
+	margin:.5em;
+	justify-items:start;
+}
+img.detailImage{
+	grid-area: 1/1/7/2;
+	justify-self:start;
+	width:auto;
+}
+.detailName{
+	grid-column:2/5;
+	grid-row:1/2;
+	font-size:16pt;
+		
+		text-align: start;
+}
+.mfgDetail{
+	grid-column:2/5;
+	grid-row:2/3;
+	font-size:16t;
+		
+		text-align: start;
+}
+.priceDetail{
+	grid-column:2/5;
+	grid-row:3/4;
+	font-size:16pt;
+		
+		color: red;
+	text-align: start;
+}
+.weightDetail{
+	grid-column:2/5;
+	grid-row:4/5;
+	text-align: start;
+	font-size:12pt;
+	
+}
+.starsDetail{
+	grid-column:2/5;
+	grid-row:5/6;
+	text-align: start;
+	width: 25%;
+		
 }
