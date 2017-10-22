@@ -27,7 +27,7 @@
 	 <c:if test="${nameModel.lmf}">
   <div><c:out value="${nameModel.lastName }"/>,<c:out value="${nameModel.firstName }"/> <c:out value="${nameModel.mI }"/>
 	</div></c:if>
-	 <c:if test="${nameModel.lmf}">
+	 <c:if test="${nameModel.lf}">
   <div><c:out value="${nameModel.lastName }"/>,<c:out value="${nameModel.firstName }"/> 
 	</div></c:if>
 
