@@ -1,0 +1,23 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Product List View</title>
+    <link rel="stylesheet" href="css/store.css" />
+</head>
+<body>
+    <header>
+        <h1>Jeff's Online Store</h1>        
+    </header>
+    <nav>
+        <ul>
+              <li><a href="homepage">Home</a></li>
+           <!--  <li><a href="productTiles">Tiles</a></li>
+             <li><a href="productList">List</a></li>  -->
+        </ul>
+        
+    </nav>

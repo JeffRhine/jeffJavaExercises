@@ -46,12 +46,7 @@ public class HelloController {
 		return "reviewPage";
 	}
 	
-//	@RequestMapping(path="/reviewPage", method=RequestMethod.POST)
-//	public String reviewPage(@ModelAttribute Review newReview) {
-//	newReview.setDateSubmitted(LocalDateTime.now());
-//	reviewDao.save(newReview);
-//	return "redirect:/homepage";
-//	}
+
 
 
 
@@ -69,14 +64,5 @@ public String processReview(@Valid @ModelAttribute Review newReview, BindingResu
 
 }
 
-//@RequestMapping(path="/registrationForm",method=RequestMethod.POST)
-//public String processRegistrationForm(@Valid @ModelAttribute Registration registration, BindingResult result, RedirectAttributes flash){		
-//	flash.addFlashAttribute("registrationForm",registration);	
-//	if(result.hasErrors()){
-//		flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX+"registrationForm",result);
-//		return "redirect:/registrationForm";
-//	}
-//	return "redirect:/registrationConfirm";
-//}
 
 

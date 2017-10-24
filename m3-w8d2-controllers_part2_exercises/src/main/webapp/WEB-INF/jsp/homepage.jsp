@@ -23,7 +23,7 @@
 	<br>
 		 <strong> <c:out value="${review.title }"/></strong> (<c:out value="${review.username }"/>) <br>
 		 <br>
-		  <c:out value="${review.dateSubmitted}"/><br>
+		  <c:out  value="${review.dateSubmitted}"/><br>
 		  <br>
 		  <fmt:formatNumber maxFractionDigits="0" value="${review.rating}" var="formattedRating"/>
 		<img src="img/${formattedRating}-star.png" class ="starsDetail"/><br>

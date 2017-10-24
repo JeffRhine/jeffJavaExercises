@@ -11,9 +11,17 @@ public class FizzBuzzModel {
  private int num4;
  private int num5;
  
- public String fizzBuzz(){
-	 if()
- }
+// public String fizzBuzz(){
+//	 if((divBy * divBy2)%num1==0){
+// return num1 + " fizz"+"buzz";
+ // }else if(divBy%num1==0){
+// return num1 + " fizz";
+// }else if(divBy2%num1==0){
+// return num1 + " buzz";
+// }else{
+// return num1;
+//}
+// }
  
 
 public String getFizz() {
