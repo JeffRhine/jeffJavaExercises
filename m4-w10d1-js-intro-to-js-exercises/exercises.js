@@ -131,3 +131,6 @@ function blackJack(j,k){
         return 0;
     }
 }
+function iqTest(nums6){
+
+}
