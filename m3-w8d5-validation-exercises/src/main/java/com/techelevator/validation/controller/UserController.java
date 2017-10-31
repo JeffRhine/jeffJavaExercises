@@ -15,16 +15,13 @@ import com.techelevator.validation.model.Registration;
 
 @Controller
 public class UserController {
-	// GET: /
+
 	@RequestMapping(path="/", method=RequestMethod.GET)
 	public String getMainScreen() {
 		return "homePage";
 	}
 
-	// Add the following Controller Actions
-
-	// GET: /register
-	// Return the empty registration view
+	
 	@RequestMapping(path="/registrationForm", method=RequestMethod.GET)
 	public String showRegistrationForm(ModelMap modelHolder) {
 		if(! modelHolder.containsAttribute("registrationForm")){
