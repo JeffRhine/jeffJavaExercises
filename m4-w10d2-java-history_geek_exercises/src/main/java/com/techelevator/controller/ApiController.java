@@ -21,7 +21,7 @@ public class ApiController {
     public BigDecimal getTax(@RequestParam String billingZipCode, @RequestParam double subtotal) {
 		double taxRate = TaxCalculator.getTaxRate(billingZipCode);
 		BigDecimal taxTotal = new BigDecimal(subtotal * taxRate).setScale(2, BigDecimal.ROUND_HALF_DOWN);
-        return taxTotal;
+        return  taxTotal;
     }
 
 }
