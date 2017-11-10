@@ -30,4 +30,12 @@
   	<url-pattern>*.jpg</url-pattern>
   	<url-pattern>*.gif</url-pattern>
   </servlet-mapping>
+  
+  <session-config>
+  <session-timeout>30</session-timeout>
+ 	 <cookie-config>
+   		<secure>true</secure>
+  	 </cookie-config>
+   	 <tracking-mode>COOKIE</tracking-mode> 
+  </session-config>
 </web-app>

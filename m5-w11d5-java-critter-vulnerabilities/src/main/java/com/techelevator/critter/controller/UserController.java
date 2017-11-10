@@ -4,12 +4,14 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techelevator.critter.model.MessageDAO;
+import com.techelevator.critter.model.User;
 import com.techelevator.critter.model.UserDAO;
 
 @Controller
@@ -30,8 +32,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/users", method=RequestMethod.POST)
-	public String createUser(@RequestParam String userName, @RequestParam String password) {
-		userDAO.saveUser(userName, password);
+	public String createUser(@ModelAttribute User newUser) {
+		
+		userDAO.saveUser(newUser.getUserName(), newUser.getPassword());
 		return "redirect:/login";
 	}
 	
