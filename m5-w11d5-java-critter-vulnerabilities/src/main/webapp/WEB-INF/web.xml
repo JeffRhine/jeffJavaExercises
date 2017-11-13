@@ -19,7 +19,14 @@
     <servlet-name>springmvc</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-	  
+  <filter>
+  	<filter-name>authFilter</filter-name>
+  	<filter-class>com.techelevator.critter.security.AuthorizationFilter</filter-class>
+  </filter>
+	  <filter-mapping>
+	  	<filter-name>authFilter</filter-name>
+	  	<url-pattern>/users/*</url-pattern>
+	  </filter-mapping>
   <servlet-mapping>
   	<!-- Every servlet container (i.e. Tomcat) has a servlet with the name "default" -->
   	<servlet-name>default</servlet-name> 
@@ -34,7 +41,7 @@
   <session-config>
   <session-timeout>30</session-timeout>
  	 <cookie-config>
-   		<secure>true</secure>
+   		
   	 </cookie-config>
    	 <tracking-mode>COOKIE</tracking-mode> 
   </session-config>

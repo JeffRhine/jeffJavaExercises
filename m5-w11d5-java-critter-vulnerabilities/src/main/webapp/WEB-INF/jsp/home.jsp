@@ -12,6 +12,12 @@
 			<span class="username"><a href="${messageHref}">${message.fromUsername}</a></span>
 			<span class="message-text">${message.text}</span>
 			<time class="timeago" datetime="${message.createTime}">${message.createTime}</time>
+			<c:url var="deleteMessage" value="/deleteMessage"/>
+			<!-- <button type="delete" value="message_id" class="button">Delete</button> -->
+			<form action="deleteMessage" method="POST">
+			<input type="hidden" name="id" value="${message.id }"/>
+			<input type="submit" value="DELETE"/>
+			</form>
 		</li>
 	</c:forEach>
 </ol>

@@ -9,6 +9,7 @@
 		<li class="message">
 			<span class="message-text">${message.text}</span>
 			<time class="timeago" datetime="${message.createTime}">${message.createTime}</time>
+			
 		</li>
 	</c:forEach>
 </ol>

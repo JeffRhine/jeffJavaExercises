@@ -143,4 +143,11 @@ public class JDBCMessageDAO implements MessageDAO {
 		return id;
 	}
 
+	@Override
+	public boolean  deleteMessage(Long id) {
+		String sqlDeleteMessages = "Delete From message Where message_id =?";
+		int rows = jdbcTemplate.update(sqlDeleteMessages,id);
+		return rows>0;
+	}
 }
+

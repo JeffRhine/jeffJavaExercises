@@ -33,7 +33,6 @@ public class UserController {
 	
 	@RequestMapping(path="/users", method=RequestMethod.POST)
 	public String createUser(@ModelAttribute User newUser) {
-		
 		userDAO.saveUser(newUser.getUserName(), newUser.getPassword());
 		return "redirect:/login";
 	}
